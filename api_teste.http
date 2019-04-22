@@ -12,7 +12,7 @@ content-type: application/json
 	"price": 10000,
 	"picture": "dell.png",
 	"category": "computers",
-  "description": "Roda qualquer jogo da atualidade a 200 fps"
+ 	"description": "Roda qualquer jogo da atualidade a 200 fps"
 }
 ###
 
@@ -21,11 +21,11 @@ PUT http://localhost:3001/api/product/5cbe04711e63f14b5649b9e8 HTTP/1.1
 content-type: application/json
 
 {
-	"name": "Notebook Dell Gamer 2019 ",
-	"price": 3999,
+	"name": "Notebook VAIO Gamer 2019 ",
+	"price": 2999,
 	"picture": "dell.png",
 	"category": "computers",
-  "description": "Roda qualquer jogo da atualidade a 200 fps"
+  	"description": "Roda qualquer jogo da atualidade a 200 fps"
 }
 ###
 
@@ -37,4 +37,18 @@ GET http://localhost:3001/api/product/5cbde4894c30ec3ba0731be1
 //Deleta produto por id
 DELETE  http://localhost:3001/api/product/5cbe02bc278bc549dd7b8fb2
 
+###
+//Rota privada
+GET http://localhost:3001/api/private
 
+###
+###
+//Rota signup - Criar usuario
+POST http://localhost:3001/api/signup HTTP/1.1
+content-type: application/json
+{
+	"email": "adm@api.com",
+	"displayName": "Robson Cardoso",
+	"password": "senha"
+}
+###
