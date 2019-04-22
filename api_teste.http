@@ -1,0 +1,91 @@
+http://localhost:8081/getoffer/5cb3b0d8a6e7bd60a6f4ff71
+
+###
+
+POST http://localhost:3001/api/product HTTP/1.1
+content-type: application/json
+
+{
+	"name": "MacBook Air",
+	"price": 1000,
+	"picture": "macbook.png",
+	"category": "computers",
+  "description": "O mais leve e com tela retina"
+}
+###
+//atualiza User
+PUT http://localhost:8081/user/5c92498bbce5e6339e007823 HTTP/1.1
+content-type: application/json
+
+{
+  "_id": "5c92498bbce5e6339e007823",
+  "profile": "ADMIN",
+  "name": "Robson Gonçalves Cardoso",
+  "company": "Siratec",
+  "email": "email@robson.com.br",
+  "address": "Rua da sabedoria",
+  "password": "sdfsdfs",
+  "note": "anota"     
+}
+###
+
+//busca dados
+GET http://localhost:3001/api/product/5cbde4894c30ec3ba0731be1
+
+
+
+###
+PUT http://localhost:8081/partners:5c85875c1abbd461bf52e298 HTTP/1.1
+content-type: application/json
+
+{
+		"dba": "teste",
+        "taxid": "teste",
+        "address": "teste",
+        "city": "teste",
+        "zipcode": "teste",
+        "site": "teste",
+        "email2": "teste",
+        "contact": "teste",
+        "type": "teste",
+        "phone1": "teste",
+        "phone2": "teste",
+        "contact2": "teste",
+        "type2": "teste",
+        "phone1c2": "teste",
+        "phone2c2": "teste",
+        "contact3": "teste",
+        "type3": "teste",
+        "phone1c3": "teste",
+        "phone2c3": "teste",
+        "note": "teste",
+        "commission": "teste",
+        "value": "100000",
+        
+        
+}
+		
+###
+"contract":"teste",
+        "contract_name":"teste",
+"adverts":[
+ 			"status":"teste",
+            "ponctuation":"teste",
+					],
+        "datein": [
+			"type": "teste"
+            "default": "teste"
+					],
+             
+        "offer": [],
+        "comments": [],
+
+        "localizacao": [
+			 "type": [
+				"type": "teste"
+			 ],
+			 [
+				"coordinates": [] 
+			 ] 
+			]   
+        
