@@ -14,7 +14,14 @@ app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json())
 
 app.get('/api/product', (req, res) => {
- res.send(200, {products:[]})
+       Product.find({}, (err, products) => {
+        if (err) return res.status(500).send({message: `Não foi possivel realizar a busca: ${err}`})
+        if (!products) return res.status(404).send({message: `Produtos não existem`})
+
+        res.send(200, {products})
+ })
+
+   
 })
 
 app.get('/api/product/:productId', (req, res) => {
@@ -47,11 +54,28 @@ app.post('/api/product', (req, res) => {
 })
 
 app.put('/api/product/:productId', (req, res) => {
+     let productId = req.params.productId
+     let update = req.body
 
+     Product.findByIdAndUpdate(productId, update, (err, productUpdated) =>{
+        if (err) res.status(500).send({message: `Erro ao atualizar produto: ${err}`})
+
+        res.status(200).send({ product: productUpdated})
+     })
 })
 
 app.delete('/api/product/:productId', (req, res) => {
+    let productId = req.params.productId
 
+    Product.findById(productId, (err, product) => {
+        if (err) res.status(500).send({message: `Erro ao excluir produto: ${err}`})
+
+
+        product.remove(err => {
+            if (err) res.status(500).send({message: `Erro ao excluir produto: ${err}`})
+            res.status(200).send({message: `O produto foi excluido`})
+        })
+    })
 })
 
 

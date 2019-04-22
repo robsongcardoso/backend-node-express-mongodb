@@ -1,91 +1,40 @@
-http://localhost:8081/getoffer/5cb3b0d8a6e7bd60a6f4ff71
+//busca dados
+GET http://localhost:3001/api/product
 
 ###
 
+//Salva produto
 POST http://localhost:3001/api/product HTTP/1.1
 content-type: application/json
 
 {
-	"name": "MacBook Air",
-	"price": 1000,
-	"picture": "macbook.png",
+	"name": "Notebook Dell Gamer ",
+	"price": 10000,
+	"picture": "dell.png",
 	"category": "computers",
-  "description": "O mais leve e com tela retina"
+  "description": "Roda qualquer jogo da atualidade a 200 fps"
 }
 ###
+
 //atualiza User
-PUT http://localhost:8081/user/5c92498bbce5e6339e007823 HTTP/1.1
+PUT http://localhost:3001/api/product/5cbe04711e63f14b5649b9e8 HTTP/1.1
 content-type: application/json
 
 {
-  "_id": "5c92498bbce5e6339e007823",
-  "profile": "ADMIN",
-  "name": "Robson Gonçalves Cardoso",
-  "company": "Siratec",
-  "email": "email@robson.com.br",
-  "address": "Rua da sabedoria",
-  "password": "sdfsdfs",
-  "note": "anota"     
+	"name": "Notebook Dell Gamer 2019 ",
+	"price": 3999,
+	"picture": "dell.png",
+	"category": "computers",
+  "description": "Roda qualquer jogo da atualidade a 200 fps"
 }
 ###
 
-//busca dados
+//busca produto por id
 GET http://localhost:3001/api/product/5cbde4894c30ec3ba0731be1
 
 
-
 ###
-PUT http://localhost:8081/partners:5c85875c1abbd461bf52e298 HTTP/1.1
-content-type: application/json
+//Deleta produto por id
+DELETE  http://localhost:3001/api/product/5cbe02bc278bc549dd7b8fb2
 
-{
-		"dba": "teste",
-        "taxid": "teste",
-        "address": "teste",
-        "city": "teste",
-        "zipcode": "teste",
-        "site": "teste",
-        "email2": "teste",
-        "contact": "teste",
-        "type": "teste",
-        "phone1": "teste",
-        "phone2": "teste",
-        "contact2": "teste",
-        "type2": "teste",
-        "phone1c2": "teste",
-        "phone2c2": "teste",
-        "contact3": "teste",
-        "type3": "teste",
-        "phone1c3": "teste",
-        "phone2c3": "teste",
-        "note": "teste",
-        "commission": "teste",
-        "value": "100000",
-        
-        
-}
-		
-###
-"contract":"teste",
-        "contract_name":"teste",
-"adverts":[
- 			"status":"teste",
-            "ponctuation":"teste",
-					],
-        "datein": [
-			"type": "teste"
-            "default": "teste"
-					],
-             
-        "offer": [],
-        "comments": [],
 
-        "localizacao": [
-			 "type": [
-				"type": "teste"
-			 ],
-			 [
-				"coordinates": [] 
-			 ] 
-			]   
-        
